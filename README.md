@@ -4,6 +4,12 @@
 
 A framework-agnostic FHEVM SDK with comprehensive examples for React, Next.js, Vue, and Node.js - making it simple, consistent, and developer-friendly to build privacy-preserving applications.
 
+🌐 **Live Application**: [https://fhe-agricultural-futures.vercel.app/](https://fhe-agricultural-futures.vercel.app/)
+
+🔗 **Smart Contract**: [Sepolia Testnet - 0x3aA0E7401D4992423A77390e529598e805196ba4](https://sepolia.etherscan.io/address/0x3aA0E7401D4992423A77390e529598e805196ba4)
+
+🎥 **Demo Video**: Download and watch `demo.mp4` in the repository to see the platform in action
+
 ## Overview
 
 This project provides a **complete FHEVM SDK** that works across any JavaScript/TypeScript environment, along with ready-to-use examples demonstrating integration with popular frameworks.
