@@ -1,0 +1,31 @@
+{
+  "name": "agricultural-futures-example",
+  "version": "1.0.0",
+  "description": "Confidential Agricultural Futures Trading - Example using FHEVM SDK",
+  "type": "module",
+  "scripts": {
+    "compile": "hardhat compile",
+    "deploy": "hardhat run scripts/deploy.js --network sepolia",
+    "deploy:local": "hardhat run scripts/deploy.js --network localhost",
+    "test": "hardhat test",
+    "node": "hardhat node",
+    "clean": "hardhat clean"
+  },
+  "keywords": [
+    "fhevm",
+    "agricultural",
+    "futures",
+    "trading",
+    "privacy"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "hardhat": "^2.19.4",
+    "dotenv": "^16.3.1"
+  },
+  "dependencies": {
+    "fhevm-sdk": "workspace:*"
+  }
+}
