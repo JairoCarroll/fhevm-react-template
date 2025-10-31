@@ -18,7 +18,8 @@ This project provides a **complete FHEVM SDK** that works across any JavaScript/
 
 - **Universal SDK Package** (`packages/fhevm-sdk`) - Framework-agnostic core with React hooks
 - **Next.js Example** - Full-featured web application with SDK integration
-- **Agricultural Futures Example** - Complete smart contract project with SDK
+- **Private Agricultural Futures** - Complete React/Next.js trading platform with FHE
+- **Agricultural Futures** - Smart contract project with Hardhat deployment
 - **Node.js CLI Example** - Backend/CLI usage demonstrations
 
 ## Quick Start
@@ -64,9 +65,34 @@ fhevm-react-template/
 │       │   └── helpers/     # Utility functions
 │       └── README.md
 ├── examples/
-│   ├── nextjs-example/      # Next.js web app
-│   ├── nodejs-example/      # Node.js CLI
-│   └── agricultural-futures/ # Smart contract example
+│   ├── nextjs-example/              # Next.js web app with complete SDK integration
+│   │   ├── src/
+│   │   │   ├── app/                 # Next.js App Router
+│   │   │   │   ├── api/             # API routes (encrypt, decrypt, compute, keys)
+│   │   │   │   ├── layout.tsx
+│   │   │   │   └── page.tsx
+│   │   │   ├── components/          # React components
+│   │   │   │   ├── ui/              # UI components (Button, Input, Card)
+│   │   │   │   ├── fhe/             # FHE components (FHEProvider, KeyManager, ComputationDemo)
+│   │   │   │   └── examples/        # Use case examples (BankingExample, MedicalExample)
+│   │   │   ├── lib/                 # Utilities
+│   │   │   │   ├── fhe/             # FHE client/server integration
+│   │   │   │   └── utils/           # Security and validation
+│   │   │   ├── hooks/               # Custom React hooks
+│   │   │   └── types/               # TypeScript types
+│   ├── private-agricultural-futures/ # Complete agricultural futures trading platform
+│   │   ├── src/                     # React/Next.js application
+│   │   │   ├── app/                 # Next.js App Router with layout and pages
+│   │   │   ├── components/          # Trading UI components (5 modular components)
+│   │   │   ├── hooks/               # Custom hooks (useWallet, useContract)
+│   │   │   └── lib/                 # Utilities, types, and constants
+│   │   └── contracts/               # Solidity smart contracts
+│   ├── nodejs-example/              # Node.js CLI
+│   └── agricultural-futures/        # Smart contract example with Hardhat
+├── templates/               # Template projects (reference to examples)
+├── docs/                    # Documentation
+│   ├── getting-started.md
+│   └── README.md
 └── README.md
 ```
 
@@ -162,11 +188,23 @@ function YourComponent() {
 
 Full-featured web application demonstrating:
 
-- FHEVM Provider setup
+- Complete FHEVM SDK integration
+- API routes for server-side FHE operations (encrypt, decrypt, compute)
+- Custom React hooks (useFHE, useEncryption, useComputation)
+- UI component library (Button, Input, Card)
+- FHE-specific components (FHEProvider, KeyManager, ComputationDemo)
+- Real-world use cases (BankingExample, MedicalExample)
 - Wallet connection (MetaMask)
-- Real-time encryption
-- Confidential trading interface
 - TypeScript + Tailwind CSS
+- Security utilities and validation
+
+**Features:**
+- **API Routes**: `/api/fhe/*` for encryption/decryption/computation, `/api/keys` for key management
+- **Client-side Integration**: Complete lib/fhe with client.ts, server.ts, keys.ts
+- **Custom Hooks**: useFHE, useEncryption, useComputation for easy integration
+- **UI Components**: Reusable Button, Input, Card components
+- **FHE Components**: KeyManager, ComputationDemo, custom FHEProvider
+- **Examples**: Banking and Medical record use cases
 
 **Start:**
 ```bash
@@ -174,11 +212,33 @@ npm run dev:nextjs
 # Open http://localhost:3000
 ```
 
-### 2. Agricultural Futures Example
+### 2. Private Agricultural Futures
 
-Complete smart contract project:
+Complete trading platform demonstrating:
 
-- Confidential commodity trading
+- Full-stack React/Next.js application
+- Confidential commodity futures trading
+- MetaMask wallet integration
+- 5 modular React components (WalletConnect, CreateContract, TraderProfile, ContractsList, MarketData)
+- Custom hooks for Web3 interactions (useWallet, useContract)
+- TypeScript + Bootstrap 5
+- Cyberpunk-themed UI
+- Smart contract integration with FHE
+- Complete CRUD operations for futures contracts
+
+**Start:**
+```bash
+cd examples/private-agricultural-futures
+npm install
+npm run dev
+# Open http://localhost:3000
+```
+
+### 3. Agricultural Futures
+
+Smart contract project with:
+
+- Confidential commodity trading contracts
 - FHE smart contracts (Solidity)
 - Hardhat deployment scripts
 - SDK integration examples
@@ -189,7 +249,7 @@ npm run compile:contracts
 npm run deploy:contracts
 ```
 
-### 3. Node.js CLI Example
+### 4. Node.js CLI Example
 
 Backend/CLI usage:
 
@@ -348,8 +408,9 @@ Comprehensive API documentation is available in:
 
 - [SDK README](packages/fhevm-sdk/README.md)
 - [Next.js Example README](examples/nextjs-example/README.md)
-- [Node.js Example README](examples/nodejs-example/README.md)
+- [Private Agricultural Futures README](examples/private-agricultural-futures/README.md)
 - [Agricultural Futures README](examples/agricultural-futures/README.md)
+- [Node.js Example README](examples/nodejs-example/README.md)
 
 ## Deployment
 
